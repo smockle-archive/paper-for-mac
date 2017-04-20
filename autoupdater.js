@@ -6,8 +6,12 @@ let updateCheck;
 
 function appUpdater(checkType) {
 	updateCheck = checkType;
-	autoUpdater.setFeedURL(updaterFeedURL);
-	autoUpdater.checkForUpdates();
+	try {
+		autoUpdater.setFeedURL(updaterFeedURL);
+		autoUpdater.checkForUpdates();
+	} catch (err) {
+		// is app signed?
+	}
 }
 
 autoUpdater.on('update-not-available', () => {
