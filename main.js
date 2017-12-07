@@ -22,6 +22,7 @@ function createWindow () {
   });
 
   win = new BrowserWindow({
+    backgroundColor: '#fff',
     x: mainWindowState.x,
     y: mainWindowState.y,
     width: mainWindowState.width,
@@ -30,6 +31,12 @@ function createWindow () {
     vibrancy: 'light',
     minWidth: 800,
     minHeight: 600,
+    show: false // Avoid flash of no content
+  });
+
+  // Show window after the renderer process has rendered the page
+  win.once('ready-to-show', () => {
+    win.show();
   });
 
   mainWindowState.manage(win);
