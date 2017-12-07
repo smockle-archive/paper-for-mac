@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "electron-lets-move": "0.0.5",
-    "electron-spellchecker": "^1.0.4",
     "electron-window-state": "^4.0.2"
   }
 }
