@@ -4,10 +4,7 @@ module.exports = [
   {
     label: 'Paper',
     submenu: [
-      {
-        label: 'About Paper',
-        selector: 'orderFrontStandardAboutPanel:'
-      },
+      { role: 'about' },
       {
         label: 'Check for Update',
         click() {
@@ -15,92 +12,40 @@ module.exports = [
         }
       },
       { type: 'separator' },
-      {
-        label: 'Hide Paper',
-        accelerator: 'Command+H',
-        selector: 'hide:'
-      },
-      {
-        label: 'Hide Others',
-        accelerator: 'Command+Shift+H',
-        selector: 'hideOtherApplications:'
-      },
-      {
-        label: 'Show All',
-        selector: 'unhideAllApplications:'
-      },
+      { role: 'hide' },
+      { role: 'hideothers' },
+      { role: 'unhide' },
       { type: 'separator' },
-      {
-        label: 'Quit',
-        accelerator: 'Command+Q',
-        selector: 'terminate:'
-      },
+      { role: 'quit' }
     ]
   },
   {
-    label: 'Edit',
+    role: 'editMenu',
     submenu: [
-      {
-        label: 'Undo',
-        accelerator: 'Command+Z',
-        selector: 'undo:'
-      },
-      {
-        label: 'Redo',
-        accelerator: 'Shift+Command+Z',
-        selector: 'redo:'
-      },
+      { role: 'undo' },
+      { role: 'redo' },
       { type: 'separator' },
-      {
-        label: 'Cut',
-        accelerator: 'Command+X',
-        selector: 'cut:'
-      },
-      {
-        label: 'Copy',
-        accelerator: 'Command+C',
-        selector: 'copy:'
-      },
-      {
-        label: 'Paste',
-        accelerator: 'Command+V',
-        selector: 'paste:'
-      },
-      {
-        label: 'Select All',
-        accelerator: 'Command+A',
-        selector: 'selectAll:'
-      }
+      { role: 'cut' },
+      { role: 'copy' },
+      { role: 'paste' },
+      { role: 'selectall' }
     ]
   },
   {
     label: 'View',
     submenu: [
-      {
-        label: 'Reload',
-        accelerator: 'Command+R',
-        click: () => { win.reload(); }
-      }
+      { role: 'reload' },
+      { type: 'separator' },
+      { role: 'togglefullscreen' }
     ]
   },
   {
-    label: 'Window',
+    role: 'window',
     submenu: [
-      {
-        label: 'Minimize',
-        accelerator: 'Command+M',
-        selector: 'performMiniaturize:'
-      },
-      {
-        label: 'Close',
-        accelerator: 'Command+W',
-        selector: 'hide:'
-      },
+      { role: 'minimize' },
+      { role: 'close' },
       { type: 'separator' },
-      {
-        label: 'Bring All to Front',
-        selector: 'arrangeInFront:'
-      }
+      { role: 'front' }
     ]
   }
 ];
