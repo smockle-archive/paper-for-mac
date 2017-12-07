@@ -22,13 +22,11 @@ function createWindow () {
   });
 
   win = new BrowserWindow({
-    backgroundColor: '#fff',
     x: mainWindowState.x,
     y: mainWindowState.y,
     width: mainWindowState.width,
     height: mainWindowState.height,
     titleBarStyle: 'hidden',
-    vibrancy: 'light',
     minWidth: 800,
     minHeight: 600,
     show: false // Avoid flash of no content
